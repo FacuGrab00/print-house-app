@@ -10,11 +10,20 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
   ],
 
+  app: {
+    head: {
+      htmlAttrs: { lang: 'es' },
+    },
+  },
+
   css: ['~/assets/css/main.css'],
 
   site: {
+    // TODO: reemplazar por el dominio real
     url: 'https://example.com',
-    name: 'Print House',
+    name: 'PrintHouse',
+    description: 'Papelería creativa, grabados láser, sublimación y diseño gráfico. Todo lo que imaginás, hecho a tu medida.',
+    defaultLocale: 'es',
   },
 
   compatibilityDate: '2025-07-15',
@@ -22,5 +31,18 @@ export default defineNuxtConfig({
 
   vite: {
     plugins: [tailwindcss()],
+  },
+
+  fonts: {
+    families: [
+      { name: 'Poppins', provider: 'google', weights: [400, 500, 600, 700] },
+      { name: 'Archivo Black', provider: 'google', weights: [400] },
+    ],
+  },
+
+  icon: {
+    serverBundle: {
+      collections: ['lucide', 'simple-icons'],
+    },
   },
 })

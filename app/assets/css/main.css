@@ -1,1 +1,34 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Archivo Black", "Poppins", ui-sans-serif, sans-serif;
+
+  /* Colores de la marca (CMYK del logo) */
+  --color-ph-cyan: #00a3e0;
+  --color-ph-magenta: #e5007d;
+  --color-ph-yellow: #ffd100;
+  --color-ph-ink: #111111;
+
+  --color-ph-cyan-soft: #e3f5fc;
+  --color-ph-magenta-soft: #fde6f2;
+  --color-ph-yellow-soft: #fff8d6;
+  --color-ph-ink-soft: #ededed;
+
+  --color-ph-paper: #f5f5f3;
+}
+
+@utility halftone {
+  background-image: radial-gradient(circle, currentColor 1.2px, transparent 1.7px);
+  background-size: 12px 12px;
+}
+
+@utility cmyk-gradient {
+  background-image: linear-gradient(110deg, var(--color-ph-cyan) 0%, var(--color-ph-magenta) 55%, var(--color-ph-yellow) 100%);
+}
+
+@layer base {
+  body {
+    @apply bg-white font-sans text-ph-ink antialiased;
+  }
+}
